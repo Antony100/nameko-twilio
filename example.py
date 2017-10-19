@@ -2,14 +2,14 @@ from nameko.rpc import rpc
 from nameko_twilio import Twilio
 
 
-class SmsService:
-    name = "sms_service"
+class MessageService:
+    name = "message_service"
     twilio = Twilio()
 
     @rpc
     def send_message(self, message, to):
         self.twilio.messages.create(
             to=to,
-            from_="+441293344603",
+            from_="YOUR TWILIO NUMBER HERE",
             body=message
         )
