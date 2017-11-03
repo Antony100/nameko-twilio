@@ -24,8 +24,8 @@ def twilio_dependency():
 
 def test_setup(twilio_dependency):
     twilio_dependency.setup()
-    assert twilio_dependency.account_sid == '123'
-    assert twilio_dependency.auth_token == 'ABC'
+    assert twilio_dependency.twilio_account_sid == '123'
+    assert twilio_dependency.twilio_auth_token == 'ABC'
 
 
 def test_start(mock_twilio_client, twilio_dependency):
